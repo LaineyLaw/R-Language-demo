@@ -1,0 +1,240 @@
+#read lines from file
+y = readLines("data.txt")
+y
+
+#create data frame
+df <- read.table(file='text.txt', header=TRUE)
+
+#nchar
+print(nchar(y))
+
+cnt = 1
+#repeat
+repeat{
+  print(y)
+  cnt = cnt + 1
+
+  if (cnt > 5){
+    break
+  }
+}
+#while
+while (cnt > 1){
+  print(y)
+  cnt = cnt - 1
+}
+#for
+v = 1:8
+for (i in v){
+  print(i)
+}
+#next
+d = LETTERS[1:10]
+for (i in d){
+
+  if (i == "B"){
+    next
+  }
+  if (i == "D"){
+    next
+  }
+  if (i == "F"){
+    next
+  }
+  print(i) 
+}
+#vectors
+r = c(4,3,2,1)
+r 
+
+t = 1:4
+t 
+
+h = seq(1,10,by=2)
+h
+
+u = h [c(2,3)]
+u
+o = r * t
+o
+v = sort(t)
+v
+o = r * v
+o
+#arrays
+v1 = c(1,2,3)
+v2 = c(4,5,6,7,8,9)
+a = array(c(v1,v2),dim = c(3,3,2))
+a
+print(a[3,,2])
+print(a[1,3,1])
+print(a[,,2])
+
+m1 = a[,,1]
+m2 = a[,,2]
+print(m1 + m2)
+
+p = v1 * a[3,,2]
+p
+
+b = rowSums(a)
+b
+
+#print 
+x<-"Hello world"
+x
+
+
+print("hello world")
+
+#suite
+o<-(1:40)
+o
+
+#basic data
+x<- 10
+x
+class(x)
+
+
+#slice number and conversion
+y<- 10L
+y
+class(y)
+
+x1<- as.integer(x)
+class(x1)
+
+
+#function
+my_func<-function(){
+  print("Hello world")
+}
+my_func()
+
+f_func<- function(fname, lname){
+paste(fname,lname) #concate first name with last name
+}
+
+f_func("Peter", "Franck")
+
+nested_func<-function(x, y){
+a<- x+y
+return(a)
+}
+
+nested_func(nested_func(2,2), nested_func(3,3))
+
+#matrice
+thematrix<-matrix(c("apple", "banana", "cherry", "orange","grape","lemon"), nrow = 3, ncol =2)
+
+#orange
+thematrix
+thematrix[1,2]
+thematrix[1,]
+thematrix[c(1,2),]
+
+newmatrix<-cbind(thematrix, c("strawberry", "blueberry","acai"))
+
+newmatrix
+
+thematrix <- thematrix[-c(1), -c(1)]
+
+#grape limon
+thematrix
+
+#remove only grape and lemon
+"apple" %in% thematrix
+
+tmatrix <- matrix(c("apple", "banana", "cherry"))
+dim(tmatrix)
+
+
+thismatrix<-matrix(c(1,2,3,4,5,6), nrow = 3, ncol =2)
+
+thismatrix
+
+colSums(thismatrix)
+
+#data frame
+data_frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+data_frame
+summary(data_frame)
+data_frame[1]
+data_frame["Training"]
+data_frame$Training
+
+new_row_DF <- rbind(data_frame, c("Running", 110, 110))
+
+new_row_DF
+
+data_frame_new<- data_frame[-c(2), -c(2)]
+data_frame_new
+
+data_frame1 <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+data_frame2 <- data.frame (
+  Training = c("Stamina", "Stamina", "Strength"),
+  Pulse = c(140, 150, 160),
+  Duration = c(30, 30, 20)
+)
+
+new_data_frame <- rbind(data_frame1, data_frame2)
+new_data_frame
+
+data_frame1["1","Training"] <- "Relax"; 
+data_frame1
+
+#plot
+plot(c(1,8), c(3,10))
+
+X<-c(1,2,3,4,5)
+Y<-c(3,7,8,9,12)
+
+plot(X,Y)
+
+
+plot(1:10, type= "l")
+
+plot(1:10, main="My Graph", xlab="The x-axis", ylab="The y axis")
+
+line1 <- c(1,2,3,4,5,10)
+line2 <- c(2,5,7,8,9,10)
+
+plot(line1, type = "l", col = "blue")
+lines(line2, type="l", col = "red")
+
+#pie
+x <- c(10,20,30,40)
+pie(x)
+
+mylabel <- c("Apples", "Bananas", "Cherries", "Dates")
+pie(x, label = mylabel, main = "Fruits")
+
+#barplot
+x1 <- c("A", "B", "C", "D")
+
+# y-axis values
+y1 <- c(2, 4, 6, 8)
+
+barplot(y1, name.arg = x1)
+
+x<-rnorm(1000)
+y<-x + rnorm(1000)
+
+plot(x,y)
+
+
+plot(x, y, main = "regression line", xlab = "x-values", ylab = "y-values")
+abline(lm(y ~ x), col = "red", lwd = 2.0)
+
+#creating a vertical line on the current plot for regression line: a regression line indicate a linear relationship between the dependent variable on the y-axis and the independent variables on the x-axis. ~ indicate that y is the in dependent variable and x the independent variable 
